@@ -17,11 +17,12 @@
         valueEl.innerHTML = 0;
       }
       render();
-
+      // 計數器減一
       document.getElementById('decrement')
         .addEventListener('click', function () {
             valueEl.innerHTML = valueEl.innerHTML - 1;
         })
+      // 計數器 delay 1000, 加一      
       document.getElementById('incrementAsync')
         .addEventListener('click', function () {
           setTimeout(
