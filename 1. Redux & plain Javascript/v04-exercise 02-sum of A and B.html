@@ -28,7 +28,7 @@
          var state = store.getState();
          var state2 = store_sum.getState();
          document.getElementById('value').innerHTML = state.count;
-         document.getElementById('value2').innerHTML = state2.count(1,2);
+         document.getElementById('value2').innerHTML = state2.count;
       };
       store.subscribe(render);
       store_sum.subscribe(render);
