@@ -29,12 +29,12 @@
         console.groupEnd('render()')
       }
       render();
-      store.subscribe(render);
+      store.subscribe(render);//v4 5:19
       // ~end step 1.3
       // step 2.2: REDUCER
       function counter(currentState, action) { // REDUCER
         // set Default Value for STATE
-        var DEFAULT_STATE = {count:0};
+        var DEFAULT_STATE = {count:0, sum:0};
         console.group('REDUCER')
         var nextState = Object.assign({}, currentState);
         console.log('current STATE == ', currentState)
@@ -43,7 +43,7 @@
           console.log('next STATE == ', nextState)
           console.groupEnd('REDUCER')
           return nextState;
-        }
+}
         // 選擇
         switch(action.type){
           case 'DECREMENT': // look at Note 2.1
@@ -51,6 +51,11 @@
             console.log('next STATE == ', nextState)
             console.groupEnd('REDUCER')
             return nextState; // Note 2.2
+          case 'SUM': //v4 y:48
+            nextState.count = action.a + action.b;
+            console.log('next STATE == ', nextState)
+            console.groupEnd('REDUCER')
+            return nextState;
           default:
             return nextState;
         }
@@ -59,11 +64,12 @@
       document.getElementById('decrement')
         .addEventListener('click', function () {
             // step 2.1
-            var action = {type: 'DECREMENT'}; // Note 2.1
-            console.log("");
+            // var action = {type: 'DECREMENT'}; // Note 2.1
+            var action = {type: 'SUM', a: 10, b: 15};
+            console.log(""); //debug
             console.group("store.dispatch(action)")
             console.info("ACTION == ", action)
-            store.dispatch(action);
+            store.dispatch(action); // v4 4:26
             console.groupEnd("store.dispatch(action)")
             // ~end step 2.1
         })
