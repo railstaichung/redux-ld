@@ -21,17 +21,17 @@
     <script>
       // step 1.2
       var store = Redux.createStore(counter)
-      // ~end step 1.2      
-      // step 1.3      
-      
+      // ~end step 1.2
+      // step 1.3
+
       function render() {
          var state = store.getState();
          document.getElementById('value').innerHTML = state.count;
          document.getElementById('value2').innerHTML = state.sum;
       };
-      
+
       store.subscribe(render);
-      // ~end step 1.3      
+      // ~end step 1.3
       render();
 
       // step 2.2
@@ -81,7 +81,7 @@
           var a = document.getElementById('a').value;
           var b = document.getElementById('b').value;
           // step 2.1
-          var action = { type: 'SUM', a:a, b:b }; // Note2.1
+          var action = { type: 'SUM', a: a, b: b }; // Note2.1
           store.dispatch(action);
           // ~end step 2.1
         })
