@@ -43,8 +43,8 @@
           console.log('next STATE == ', nextState)
           console.groupEnd('REDUCER')
           return nextState;
-        }
-
+        }
+        // 選擇
         switch(action.type){
           case 'DECREMENT': // look at Note 2.1
             nextState.count = currentState.count - 1;
