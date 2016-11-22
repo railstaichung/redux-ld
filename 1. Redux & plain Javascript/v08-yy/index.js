@@ -47,8 +47,10 @@ var store = Redux.createStore(combineReducer, Redux.applyMiddleware(logger, cras
 
 function render() {
     var state = store.getState();
-    document.getElementById('value').innerHTML = state.count;
+    document.getElementById('value').innerHTML = state.count.result;
     document.getElementById('value2').innerHTML = state.sum;
+
+    
 };
 
 store.subscribe(render);
