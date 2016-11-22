@@ -12,8 +12,24 @@ const logger = function(store){
   }
 }
 
+//second middleware
+const crashReporter = function(store){
+  return function(next){
+    return function(action){
+      try{
+        next(action);
+      }catch(err){
+        console.group('crashReporter');
+        console.error('error hapen with action == ', action);
+        console.error(err);
+        console.groupEnd('crashReporter');
+      }
+    }
+  }
+}
+
 // step 1.2
-var store = Redux.createStore(combineReducer, Redux.applyMiddleware(logger))
+var store = Redux.createStore(combineReducer, Redux.applyMiddleware(logger, crashReporter))
 // ~end step 1.2
 // step 1.3
 
