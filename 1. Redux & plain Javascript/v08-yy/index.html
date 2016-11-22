@@ -33,13 +33,7 @@
         })
       document.getElementById('incrementAsync')
         .addEventListener('click', function () {
-          setTimeout(
-            function increment () {
-              // step 2.1
-              store.dispatch(increase());
-              // ~end step 2.1
-            }
-          , 1000); // execute increment () method after 1000 millisecond or 1 second
+          store.dispatch();
         })
       document.getElementById('sum')
         .addEventListener('click', function () {
