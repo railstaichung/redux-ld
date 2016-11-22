@@ -8,10 +8,10 @@ function counter(currentState, action){
     }
     switch (action.type) {
       case 'DECREMENT': // look at Note2.1
-        nextState.result = currentState - 1;
+        nextState.result = currentState.result - 1;
         return nextState;// Note2.2
       case 'INCREMENT': // look at Note2.1
-        nextState.result = currentState + 1;
+        nextState.result = currentState.result + 1;
         nextState.loading = false;
         return nextState;// Note2.2
       default:
