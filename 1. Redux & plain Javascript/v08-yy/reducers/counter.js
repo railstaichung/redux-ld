@@ -14,6 +14,10 @@ function counter(currentState, action){
         nextState.result = currentState.result + 1;
         nextState.loading = false;
         return nextState;// Note2.2
+      case 'INCREMENT_LOADING': // look at Note2.1
+        nextState.result = currentState.result + 1;
+        nextState.loading = true;
+        return nextState;// Note2.2
       default:
         nextState = currentState;
         return nextState;
