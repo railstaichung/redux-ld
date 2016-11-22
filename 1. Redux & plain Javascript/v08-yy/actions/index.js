@@ -12,10 +12,10 @@ var getSum = function(a, b){
 }
 
 //ASYNC
-var asyncIncrease = function(){
+var asyncIncrease = function(dispatch, state){
   _fakeServerApi.increaseCount(store.getState().count.result,
     function(data){
-      store.dispatch({type: 'INCREMENT'})
+      dispatch({type: 'INCREMENT'})
     }
 );
 }
