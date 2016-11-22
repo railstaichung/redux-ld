@@ -27,9 +27,21 @@ const crashReporter = function(store){
     }
   }
 }
+//third middleware
+const thunk = function(store){
+  return function(next){
+    return function(action){
+      if(typeof action === 'function'){
+        action(store.dispatch, store.getState());
+      }else{
+        next(action);
+      }
+    }
+  }
+}
 
 // step 1.2
-var store = Redux.createStore(combineReducer, Redux.applyMiddleware(logger, crashReporter))
+var store = Redux.createStore(combineReducer, Redux.applyMiddleware(logger, crashReporter, thunk))
 // ~end step 1.2
 // step 1.3
 
