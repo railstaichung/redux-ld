@@ -1,5 +1,6 @@
 function counter(currentState, action){
     var DEFAULT_STATE = {result:0, loading:false};
+    var nextState = Object.assign({},currentState);
     if (currentState === undefined) { // look at to Note 1.1
 
         nextState = DEFAULT_STATE;// Note1.2
