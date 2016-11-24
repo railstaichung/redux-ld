@@ -7,9 +7,7 @@ var increase = function(){
     return { type: 'INCREMENT' };
 }
 
-var getSum = function(a, b){
-    return { type: 'SUM', a:a, b:b };
-}
+var getSum = (a, b) => ({ type: 'SUM', a:a, b:b });
 
 // ASYNC
 var asyncIncrease = function(dispatch, state){
@@ -23,7 +21,7 @@ var asyncIncrease = function(dispatch, state){
 
 var getRandomImages = function(dispatch, state){
   dispatch({ type: 'IMAGES_LOADING' });
-  var imgurAPI = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=trump";
+  var imgurAPI = "https://api.imgur.com/3/gallery/random/random/1";
   $.getJSON(imgurAPI).done(function(data){
       dispatch({ type: 'IMAGES', data:data.data});
   })
