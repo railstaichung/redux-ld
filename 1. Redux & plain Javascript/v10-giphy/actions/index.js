@@ -22,8 +22,9 @@ var asyncIncrease = function(dispatch, state){
 }
 
 var getRandomImages = function(dispatch, state){
-  var imgurAPI = "https://api.imgur.com/3/gallery/random/random/1";
+  dispatch({ type: 'IMAGES_LOADING' });
+  var imgurAPI = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=american+psycho";
   $.getJSON(imgurAPI).done(function(data){
-    console.log('API data: ', data)
+      dispatch({ type: 'IMAGES', data:data.data});
   })
 }
