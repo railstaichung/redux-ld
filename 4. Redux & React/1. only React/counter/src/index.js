@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
+class Examples extends Component {
+  render() {
+    return (
+      <div>Simple React</div>
+    )
+  }
+}
 
-const render = () => ReactDOM.render(
-  <Counter
-    value={store.getState()}
-    onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-    onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-  />,
+ReactDOM.render(
+  <Examples/>,
   document.getElementById('root')
 )
