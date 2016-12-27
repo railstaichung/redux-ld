@@ -4,7 +4,11 @@ import ReactDOM from 'react-dom'
 class Examples extends Component {
   render() {
     return (
-      <div>Simple React</div>
+      <div>
+        <div>Simple React</div>
+        <div>Simple React</div>
+        <div>Simple React</div>
+      </div>
     )
   }
 }
