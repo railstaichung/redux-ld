@@ -18,7 +18,7 @@ class Examples extends Component {
         Clicked: <span>{this.state.count}</span> times
         <button onClick={this.decrease}>Decrease</button>
         <p/>
-        <input value={this.state.a} onChange={(e)=>this.setState({a: e.target.value})}/>
+        <input value={this.state.a} onChange={(e)=>this.setState({a: e.target.value})}/> 
         + <input value={this.state.b} onChange={(e)=>this.setState({b: e.target.value})}/>
         = <span>{this.state.sum}</span>
         <button onClick={() => this.setState({sum: Number(this.state.a) + Number(this.state.b)})}>Sum</button>
@@ -30,5 +30,5 @@ class Examples extends Component {
 
 ReactDOM.render(
   <Examples/>,
-  document.getElementById('root')
+  document.getElementById('root')  
 )
